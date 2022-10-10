@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<link type="text/css" href="../../../Frontend/ckeditor5-build-classic/sample/css/sample.css" rel="stylesheet" media="screen" />
+	<title>CV Parser</title>
+</head>
+<body>
+
+<header>
+	<div class="centered">
+		<h1><a href="https://data-assessment.com/"><img src="./das_logo_76_76.png" height="20px"></a>  CV Parser</h1>
+
+		<input type="checkbox" id="menu-toggle" />
+		<label for="menu-toggle"></label>
+		  
+		<nav>
+			<a href="#">Menu</a>
+			<ul class="submenu">
+				<li><a href="#">Colors</a></li>
+				<ul class="subsubmenu">
+					<li class="subsub_col"><a href="#">Light Mode</a></li>
+					<li class="subsub_col"><a href="#">Dark Mode</a></li>
+					<li class="subsub_col"><a href="#">Colorblind</a></li>
+				</ul>
+				<li><a href="#">Language</a></li>
+				<ul class="subsubmenu">
+					<li class="subsub_lang"><a href="#">Deutsch</a></li>
+					<li class="subsub_lang"><a href="#">English</a></li>
+				</ul>
+				<li><a href="#">About</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<main>
+	<div class="centered">
+		<div>
+			<br>
+			<label for="name">Name</label><br>
+			<input 
+				type="text" 
+				id="name" 
+				name="name">
+			<br><br>
+			<label for="standort">Standort</label><br>
+			<input 
+				type="text" 
+				id="standort" 
+				name="standort">
+			<br><br>
+			<label for="foto">Foto</label><br>
+			<img style="
+				width: 180px;
+				height: 180px;
+				border: 1px solid #DFE4E6;
+				border-bottom-color: #cdd0d2;
+				border-right-color: #cdd0d2;
+				box-shadow: 2px 2px 2px rgba(0,0,0,.5);"
+				src="../../../Frontend/ckeditor5-build-classic/blank-profile-picture-973460_960_720.webp" >
+			<br><br>
+			<label for="firma_position">Firma & Position</label><br>
+			<input 
+				style="width: 13em;"
+				type="text" 
+				id="firma_position" 
+				name="firma_position">
+			<br><br>
+			<label for="ausbildung">Ausbildung</label><br>
+			<input 
+				type="text" 
+				id="ausbildung" 
+				name="ausbildung">
+			<br><br>
+			<label for="zusammenfassung">Zusammenfassung</label><br>
+			<textarea
+				style="font-family: Arial, Helvetica, sans-serif"
+				wrap="soft"
+				rows="2"
+				cols="30"	 
+				id="zusammenfassung" 
+				name="zusammenfassung"></textarea>
+			<br><br>
+			<label for="skills1">Skills</label><br>
+			<input 
+				style="width: 9.5em;"
+				type="text" 
+				id="skills1" 
+				name="skills1">
+			<br>
+			<input 
+				style="width: 6.5em;"
+				type="text" 
+				id="skills2" 
+				name="skills2">
+			<br><br>
+			<label for="erfahrung1">Berufserfahrung</label><br>
+			<input 
+				style="width: 30em;"
+				type="text" 
+				id="erfahrung1" 
+				name="erfahrung1">
+			<br>
+			<input 
+				style="width: 30em;"
+				type="text" 
+				id="erfahrung2" 
+				name="erfahrung2">
+			<br><br>
+		</div>
+	</div>
+</main>
+
+<footer>
+	<div class="vertical-center">
+		<button 
+			onclick="ok()"
+			>
+			OK
+		</button>
+		<button 
+			onclick="go_back()"
+			>
+			Back
+		</button>
+		<button 
+			onclick="display_help()"
+			>
+			Help
+		</button><br>
+	</div>
+	<div>
+		<p>Copyright © 2021-2022, <a href="https://data-assessment.com/">data assessment solutions</a> – All rights reserved.</p>
+	</div>
+</footer>
+
+<script src="../../../Frontend/ckeditor.js"></script>
+
+<script>
+	window.onload = function() {
+		ok();
+	};
+	ClassicEditor
+		.create( document.querySelector( '#editor' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+
+		function go_back(){
+			window.location.href = "./mock_up_input.html";
+		}
+
+		function display_help(){
+			let helpButton = document.getElementById('helpButton');
+			let overlay = document.getElementById('overlay');
+
+			// helpButton.addEventListener('click', () => {
+			// 	overlay.style.display = 'grid';
+			// });
+			overlay.style.display = 'grid';
+		}
+
+		function ok(){
+			document.getElementById('name').value = "Max Mustermann";
+			document.getElementById('standort').value = "Musterstadt";
+			document.getElementById('firma_position').value = "Musterfirma in Musterstadt";
+			document.getElementById('ausbildung').value = "Systeminformatiker";
+			document.getElementById('zusammenfassung').value = "Systemintegration ist meine große Leidenschaft.";
+			document.getElementById('skills1').value = "Systemeintegration";
+			document.getElementById('skills2').value = "Teamleitung";
+			document.getElementById('erfahrung1').value = "2016 - 2018: Systeminformatiker bei Musterfirma in Musterstadt";
+			document.getElementById('erfahrung2').value = "2018 - 2021: Systeminformatiker bei DAS in Hannover";
+		}
+</script>
+
+</body>
+</html>

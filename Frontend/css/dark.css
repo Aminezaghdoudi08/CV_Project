@@ -1,0 +1,269 @@
+body{
+    font-family:Helvetica, sans-serif;
+
+	background-color:#005a8d;
+	
+}*{
+    margin:0;
+    padding:0;
+}
+header,footer{
+    position: absolute;
+    background-color:rgb(36, 41, 46) !important;
+    width:100%;
+    color:rgb(36, 41, 46) !important;
+	
+}
+.logo img{
+	position:absolute;
+	margin-top:15px;
+	margin-left:80px;
+	width: 35px;
+}
+header h2{
+    position:absolute;
+    margin-top: 25px;
+    left:10%;
+	color:white;
+	font-size:18px;
+}
+header{
+	height: 12vh;
+}
+
+.nav{
+	position: fixed;
+	width:100%;
+	
+}
+
+.nav button{
+	position: relative;
+	left:75%;
+	color: white;
+	top: 25px;
+	text-decoration: none;
+	margin-right: 20px;
+	font-weight: bold;
+	padding: 0;
+    border: none;
+    background: none;
+}
+.nav div button{
+	display:inline-block;
+	text-decoration:none;
+	padding:6px;
+	color:white;
+	left:3%;
+	top:0%;
+	transition:.1s;
+}
+.nav div{
+	background-color: rgb(36, 41, 46) !important;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	z-index:1;
+	visibility:hidden;
+	position:absolute;
+	margin-top:-40px;
+	
+	left:79%;
+	top:60px;
+	transition: .5s;
+}
+.nav:hover div {
+	visibility:visible;
+	opacity:1;
+}
+.nav div button:hover{
+	background-color:#005a8d;
+	color:white;
+}
+
+.nav  div1 button{
+	display:block;
+	text-decoration:none;
+	padding:6px;
+	color:white;
+	left:10px;
+	top:5px;
+	transition:.1s;
+}
+.nav  div1{
+	background-color: rgb(36, 41, 46) !important;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	z-index:1;
+	visibility:hidden;
+	position:absolute;
+	margin-top:-30px;
+	
+	left:45%;
+	top:60px;
+	transition: .2s;
+}
+.nav div:hover div1{
+	visibility:visible;
+	opacity:1;
+}
+.nav div1 button:hover{
+	background-color:#005a8d;
+	color:white;
+}
+
+.nav  div0 button{
+	display:block;
+	text-decoration:none;
+	padding:6px;
+	color:white;
+	left:10px;
+	top:5px;
+	transition:.1s;
+}
+.nav  div0{
+	background-color: rgb(36, 41, 46) !important;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	z-index:1;
+	visibility:hidden;
+	position:absolute;
+	margin-top:-30px;
+	
+	left:5%;
+	top:60px;
+	transition: .2s;
+}
+.nav div:hover div0{
+	visibility:visible;
+	opacity:1;
+}
+.nav  div0 button:hover{
+	background-color:#005a8d;
+	color:white;
+}
+
+.popup .overlay {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100vw;
+	height:100vh;
+	background:none;
+	z-index:1;
+	display:none;
+  }
+   
+  .popup .content {
+	position:absolute;
+	top:70%;
+	left:50%;
+	transform:translate(-50%,-50%) scale(0);
+	background:rgb(36, 41, 46) !important;
+	width:250px;
+	height:125px;
+	z-index:2;
+	text-align:center;
+	padding:20px;
+	box-sizing:border-box;
+	font-family:"Open Sans",sans-serif;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	color:white;
+
+  }
+   
+  .popup .close-btn {
+	cursor:pointer;
+	position:absolute;
+	right:23px;
+	top:8px;
+	width:25px;
+	height:25px;
+	
+	color:#fff;
+	font-size:25px;
+	font-weight:600;
+	line-height:30px;
+	text-align:center;
+	border-radius:50%;
+	z-index:2;
+  }
+  .popup .close-btn p{
+	color:white;
+  }
+
+  .popup.active .content {
+	transition:all 300ms ease-in-out;
+	transform:translate(-50%,-50%) scale(1);
+  }
+  footer button{
+	position: relative;
+	left:45%;
+	color: white;
+	top: 25px;
+	text-decoration: none;
+	margin-right: 20px;
+	font-weight: bold;
+	padding: 0;
+border: none;
+background: none;
+margin-bottom: 20px;
+}
+
+#slider {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+  }
+  .slides {
+	position: relative;
+	margin: 0;
+	padding: 0;
+  }
+  .slide {
+	position: absolute;
+	list-style-type: none;
+	text-align: center;
+	width: 100%;
+	height: 100px;
+	top: 0;
+	left: 0;
+  }
+  .slide1 {background: none;}
+  .slide2 {background: none;}
+  .slide3 {background: none;}
+
+/* -----------------------CkeEditor-------------------------*/
+main .container{
+	margin-left:85px;
+	width: 70%;
+	left:40px;
+	padding: 100px;
+}
+
+/* -----------------------Footer-------------------------*/
+footer {
+	height:20vh;
+	bottom:0px;
+	height: 20vh;
+}
+
+footer h2{
+    position:relative;
+    left:30%;
+	margin-top: 50px;
+	font-size: small;
+	color:white;
+}
+footer button{
+	position: relative;
+	left:45%;
+	color: white;
+	top: 25px;
+	text-decoration: none;
+	margin-right: 20px;
+	font-weight: bold;
+	padding: 0;
+	border: none;
+	background: none;
+	margin-bottom: 20px;
+
+}
+
+ 

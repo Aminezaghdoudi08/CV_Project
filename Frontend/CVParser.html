@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Stub</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link href="https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css" rel="stylesheet" type="text/css">
+  <link  id="mystylesheet" rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+  <header>
+
+    <div class="logo"><a href="#"><img src="img/logo1.png">
+    <h2>CV Parser</h2> 
+    <div class="nav">
+      <button href="">Menu</button>
+        <div>
+          <button  href="">Language</button>
+            <div0>
+              <button href="#">Deutsch</button>
+              <button href="#">Englisch</button>
+            </div0>
+      
+          <button href="#">Color</button>
+            <div1>
+              <button onclick="swapStyle('css/dark.css')">Dark Mode</button>
+              <button href="#" onclick="swapStyle('css/main.css')">Light Mode</button>
+            </div1>
+
+             <!--Color change scripts -->
+            <script type="text/javascript">
+              var setTheme = localStorage.getItem('theme')
+              console.log('theme:', setTheme)
+          
+              if (setTheme == null){
+                swapStyle('css/main.css')
+              }else{
+                swapStyle(setTheme)
+              }
+              function swapStyle(sheet){
+                document.getElementById('mystylesheet').href = sheet
+                localStorage.setItem('theme', sheet)
+              }
+              </script>
+  
+          <button href="#">About</button>
+       </div>
+    </div>
+  </header>
+  <script src="change_language.js"></script>
+  <!---- CkeEditor x-->
+  <main>
+    <div class="container">
+       <textarea name="content1">
+          <p>Paste your copied CV here
+
+            and click parse</p>
+       </textarea>
+    </div>
+  </main>
+  
+
+  
+ <!--- CkeEditor scripts  -->
+  <script src="ckeditor/ckeditor.js"></script>
+  <script>CKEDITOR.replace('content1');</script> 
+
+  <!--
+
+<div class="loader">
+  <div class="loader-inner">
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+    <div class="loader-line-wrap">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+  <span class="closebtn2" onclick="this.parentElement.style.display='none';">&times;</span>
+</div>
+-->
+
+  
+<!-- Help Function with slider -->
+<div class="popup" id="popup-1">
+  <div class="content">
+    <div class="close-btn" onclick="togglePopup('popup-1')">&times;</div>
+    <div class="carousel">
+      <div class="slider">
+       <section>Open Your LinkedIn Profil</section>
+       <section>Copy it and paste it the WebApp</section>
+       <section>Click Parse</section>
+       <section>You have then the choice to continue or cancel</section>
+       
+     </div>
+     <div class="control">
+       <span class="arrow left">
+         <i class="material-icons">
+         keyboard_arrow_left
+         </i>
+       </span>
+       <span class="arrow right">
+         <i class="material-icons">
+         keyboard_arrow_right
+         </i>
+       </span>
+       <ul>
+         <li class="selected"></li>
+         <li></li>
+         <li></li>
+         <li></li>
+       </ul>
+     </div>
+   </div>
+  </div>
+</div>
+ 
+<!----------- Scripts --------->
+  <script  src="js/script.js"></script>
+  <script src="js/main.js"></script>
+  
+
+<!------ Footer ------->
+  <footer>	
+    <button href="">PARSE</button>
+		<button onclick="togglePopup('popup-1')">HELP</button>
+    
+    <!--alert class-->
+     <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      This is an alert box.
+    </div> 
+	  
+    <h2>
+      <p>Copyright © 2021-2022, <a href="https://data-assessment.com/">data assessment solutions</a> – All rights reserved.</p>
+	   </h2>
+	
+	</footer>
+
+</body>
+
+
+</html>

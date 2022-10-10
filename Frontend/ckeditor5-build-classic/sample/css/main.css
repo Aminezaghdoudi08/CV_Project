@@ -1,0 +1,318 @@
+body{
+	font-family:Helvetica, sans-serif;
+  background-color:#005a8d;
+    
+  }*{
+	margin:0;
+	padding:0;
+  size-adjust: 100%;  
+}
+  header,footer{
+	  position: absolute;
+	  background-color:white;
+	  width:100%;
+	  color:Black;
+  
+  }
+  .logo img{
+    position:absolute;
+    margin-top:15px;
+    margin-left:185px;
+    width: 35px;
+  }
+  header h2{
+	  position:absolute;
+	  margin-top: 25px;
+	  left:18%;
+    color:#005a8d;
+    font-size:18px;
+  }
+  header{
+    height: 12vh;
+  }
+
+  .nav{
+    position: relative;
+    width:100%;
+  }
+  
+  /* --------------------- Menu Button with scroll down box--------------------- */
+  .nav button{
+    position: relative;
+    left:78%;
+    color: black;
+    font-size: medium;
+    top: 25px;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    padding: 0;
+    border: none;
+    background: none;
+   
+  }
+  .nav div button{
+    display:inline-block;
+    text-decoration:none;
+    padding:3px;
+    color:black;
+    font-size:small;
+    left:3%;
+    top:5%;
+    transition:.1s;
+  }
+  .nav div{
+    background-color: white;
+    box-shadow:0 4px 8px rgba(0,0,0,2);
+    z-index:1;
+    visibility:hidden;
+    position:absolute;
+    margin-top:-40px;
+    left:82%;
+    top:63px;
+    transition: .5s;
+  }
+  .nav:hover div {
+    visibility:visible;
+    opacity:1;
+  }
+  .nav div button:hover{
+    background-color:#005a8d;
+    color:white;
+  }
+
+       /* -------------------- Dark an Light Mode Buttons --------------------- */
+
+  .nav  div1 button{
+    display:block;
+    text-decoration:none;
+    padding:6px;
+    color:black;
+    left:10px;
+    top:5px;
+    transition:.1s;
+  }
+  .nav  div1{
+    background-color: white;
+    box-shadow:0 4px 8px rgba(0,0,0,2);
+    z-index:1;
+    visibility:hidden;
+    position:absolute;
+    margin-top:-30px;
+    left:40%;
+    top:55px;
+    transition: .2s;
+  }
+  .nav :hover div1{
+    visibility:visible;
+    opacity:1;
+  }
+  .nav div1 button:hover{
+    background-color:#005a8d;
+    color:white;
+  }
+  
+  /* ---------------------- Deutsch/Englisch buttons -------------------- */
+
+  .nav  div0 button{
+    display:block;
+    text-decoration:none;
+    padding:6px;
+    color:black;
+    left:10px;
+    top:5px;
+    transition:.1s;
+  }
+  .nav  div0{
+    background-color: white;
+    box-shadow:0 4px 8px rgba(0,0,0,2);
+    z-index:1;
+    visibility:hidden;
+    position:absolute;
+    margin-top:-30px;
+    left:0%;
+    top:55px;
+    transition: .2s;
+  }
+  .nav :hover div0{
+    visibility:visible;
+    opacity:1;
+  }
+  .nav  div0 button:hover{
+    background-color:#005a8d;
+    color:white;
+  }
+
+  /* ------------------- Help function with slider ----------------------*/
+
+  .content {
+    transform:translate(-50%,-50%) scale(0);
+    top:60%;
+    left:50%;
+    position:absolute;
+    width: 300px;
+    height:200px;
+    box-sizing: 150px;
+    padding-bottom: 40%;
+    user-select: none;
+    background-color:white;
+    box-shadow: 0 11px 22px rgba(0, 0, 0, 0.2), 0 7px 7px rgba(0, 0, 0, 0.24);
+    font-family:"Open Sans",sans-serif;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    
+    
+  }
+   
+  .popup.active .content {
+    transform:translate(-50%,-50%) scale(1);
+  }
+  
+  
+   
+  .carousel {
+    left:-5px;
+    height: 180px;
+    width:280px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    background: #fff;
+    
+  }
+  .slider {
+    display: flex;
+    height: 100%;
+    width: 400%;
+  }
+  .slider section {
+    flex-basis: 80%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    color:black;
+    
+  }
+  .left, .right {
+    position: absolute;
+    top: 55%;
+    margin:-20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .arrow i {
+    font-size: 40px;
+    -webkit-user-select: none;
+    color: #416be4;
+  }
+  .left {
+    left: 10px;
+  }
+  .right {
+    right: 10px;
+  }
+  .control ul {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%);
+  }
+  .control ul li {
+    width: 10px;
+    height: 10px;
+    background: #005a8d;
+    border: 2px solid #005a8d;
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .control ul li.selected {
+    background: transparent;
+  }
+
+  .popup .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:23px;
+    top:2px;
+    right:2px;
+    width:35px;
+    height:35px;
+    background:none;
+    color:#005a8d;
+    font-size:30px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border-radius:50%;
+    z-index:2;
+  }
+  /* -----------------------CkeEditor-------------------------*/
+  main .container{
+    margin-left:85px;
+    width: 70%;
+    left:40px;
+    padding: 100px;
+  }
+  
+  /* -----------------------Footer-------------------------*/
+  footer {
+	  height:20vh;
+	  bottom:0px;
+	  height: 20vh;
+  }
+  
+  footer h2{
+	  position:relative;
+	  left:30%;
+	  margin-top: 40px;
+	  font-size: small;
+  }
+  footer button{
+	  position: relative;
+	  left:41%;
+	  color: #005a8d;
+	  top: 25px;
+	  text-decoration: none;
+	  margin-right: 20px;
+	  font-weight: bold;
+	  padding: 10px;
+    border: none;
+    background: none;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: 1px solid #DFE4E6;
+    border-bottom-color: #cdd0d2;
+    border-right-color: #cdd0d2;
+  }
+
+   /* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+} 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<link type="text/css" href="../../../Frontend/ckeditor5-build-classic/sample/css/sample.css" rel="stylesheet" media="screen" />
+	<title>CV Parser</title>
+</head>
+<body>
+
+<div class="overlay" id="overlay">
+	<h3>Please copy your CV</h3><br>
+	<h3>Your clipboard is empty</h3>
+</div>
+
+<header>
+	<div class="centered">
+		<h1><a href="https://data-assessment.com/"><img src="./das_logo_76_76.png" height="20px"></a>  CV Parser</h1>
+		  
+		<div>
+			<a class="menu" id="menu">Menu</a>
+			<ul class="submenu">
+				<li><a  id="submenu_col">Colors</a></li>
+				<ul class="subsubmenu_col">
+					<li class="subsub_col"><a >Light Mode</a></li>
+					<li class="subsub_col"><a >Dark Mode</a></li>
+					<li class="subsub_col"><a >Colorblind</a></li>
+				</ul>
+				<li id="submenu_lang"><a >Language</a></li>
+				<ul class="subsubmenu_lang" style="left: 5em;">
+					<li class="subsub_lang"><a >Deutsch</a></li>
+					<li class="subsub_lang"><a >English</a></li>
+				</ul>
+				<li><a >About</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+<main>
+	<div class="message"></div>
+	<div class="centered" onmouseover="clear_editor()">
+		
+		<div id="editor">
+			<p>Paste your copied CV here</p>
+			<p>and click parse</p>
+		</div>
+	</div><br>
+</main>
+
+<footer>
+	<div class="vertical-center">
+		<button
+			onclick="change_page_after_parse()"
+			>
+			Parse
+		</button>
+		<!-- onclick="display_help()" -->
+		<button 
+			id="helpButton"
+			onclick="display_help()"
+			>
+			Help
+			<div id="helpOverlay" style="display: none;"> 
+				<div id="helpNavigationBar" class="helpNavigationBar">
+					<img src="./nav_left.png"  id="helpOverlayLeft"  height="20em"></img>
+					<img src="./nav_right.png" id="helpOverlayRight" height="20em"></img>
+					<img src="./nav_exit.png"  id="helpOverlayExit"  height="20em" onclick="close_help()"></img>
+				</div>
+				<div id="helpOverlayText">Step 1:<br> Copy your LinkedIn-CV. <br> Your clipboard is currently empty.</div>
+			</div>
+		</button>
+	</div>
+	<div>
+		<p>Copyright © 2021-2022, <a href="https://data-assessment.com/">data assessment solutions</a> – All rights reserved.</p>
+	</div>
+</footer>
+
+<script src="../../../Frontend/ckeditor5-build-classic/ckeditor.js"></script>
+
+<script>
+
+	function clear_editor(){
+		editor.setData("");
+	}
+
+	ClassicEditor
+		.create( document.querySelector( '#editor' ), {
+			toolbar: [ ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+	// editor.ui.view.height = "500px";
+
+	function change_page_after_parse(){
+		window.location.href = "./output.php";
+	}
+
+	function display_help(){
+		let help = document.getElementById("helpOverlay");
+		let helpNavBar = document.getElementById("helpNavigationBar");
+		help.style.display = "block";
+		helpNavBar = "flex";
+	}
+
+	function close_help() {
+		let help = document.getElementById("helpOverlay");
+		let helpNavBar = document.getElementById("helpNavigationBar");
+		help.style.display = "none";
+		helpNavBar = "none";
+		console.log("should be closed");
+	}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+body{
+    font-family:Helvetica, sans-serif;
+	background-color: rgb(36, 41, 46) !important;
+	
+}*{
+    margin:0;
+    padding:0;
+}
+header,footer{
+    position: absolute;
+    background-color:black;
+    width:100%;
+    color:Black;
+	
+}
+.logo img{
+	position:absolute;
+	margin-top:15px;
+	margin-left:85px;
+	width: 40px;
+}
+header h2{
+    position:absolute;
+    margin-top: 25px;
+    left:10%;
+	color:black;
+	font-size:18px;
+}
+header{
+	height: 12vh;
+}
+
+.nav{
+	position: fixed;
+	width:100%;
+	
+}
+
+.nav button{
+	position: relative;
+	left:70%;
+	color: black;
+	top: 25px;
+	text-decoration: none;
+	margin-right: 20px;
+	font-weight: bold;
+	padding: 0;
+border: none;
+background: none;
+}
+.nav div button{
+	display:inline-block;
+	text-decoration:none;
+	padding:6px;
+	color:black;
+	left:5%;
+	top:0%;
+	transition:.1s;
+}
+.nav div{
+	background-color: white;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	z-index:1;
+	visibility:hidden;
+	position:absolute;
+	margin-top:-40px;
+	
+	left:76%;
+	top:60px;
+	transition: .5s;
+}
+.nav:hover div {
+	visibility:visible;
+	opacity:1;
+}
+.nav div button:hover{
+	background-color:#005a8d;
+	color:white;
+}
+
+.nav  div1 button{
+	display:block;
+	text-decoration:none;
+	padding:6px;
+	color:black;
+	left:10px;
+	top:5px;
+	transition:.1s;
+}
+.nav  div1{
+	background-color: white;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	z-index:1;
+	visibility:hidden;
+	position:absolute;
+	margin-top:-30px;
+	
+	left:45%;
+	top:60px;
+	transition: .2s;
+}
+.nav div:hover div1{
+	visibility:visible;
+	opacity:1;
+}
+.nav div1 button:hover{
+	background-color:#005a8d;
+	color:white;
+}
+
+.nav  div0 button{
+	display:block;
+	text-decoration:none;
+	padding:6px;
+	color:black;
+	left:10px;
+	top:5px;
+	transition:.1s;
+}
+.nav  div0{
+	background-color: white;
+	box-shadow:0 4px 8px rgba(0,0,0,2);
+	z-index:1;
+	visibility:hidden;
+	position:absolute;
+	margin-top:-30px;
+	
+	left:5%;
+	top:60px;
+	transition: .2s;
+}
+.nav div:hover div0{
+	visibility:visible;
+	opacity:1;
+}
+.nav  div0 button:hover{
+	background-color:#005a8d;
+	color:white;
+}
+
+
+
+footer{
+	height:15vh;
+	bottom:0px;
+	height: 12vh;
+}
+footer h2{
+    position: absolute;
+    left:40%;
+	font-size: medium;
+}
